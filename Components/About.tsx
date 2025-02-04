@@ -17,7 +17,7 @@ const About = () => {
         <div className="flex justify-center lg:justify-end order-1 lg:order-2">
           <div data-aos="fade-left" className="w-[80%] max-w-[300px] md:max-w-[350px] lg:max-w-[400px] aspect-square relative overflow-hidden rounded-full shadow-lg shadow-gray-500">
             <Image 
-              src="/images/Romeo.jpg"
+              src="/public/images/Romeo.jpg"
               alt="user" 
               fill
               sizes="(max-width: 768px) 200px, (max-width: 1024px) 300px, 400px"

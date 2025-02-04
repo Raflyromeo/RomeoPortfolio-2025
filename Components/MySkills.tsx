@@ -38,62 +38,62 @@ const skills: Skill[] = [
   { 
     name: "Figma", 
     description: "Before coding, I design everything in Figma to ensure a smooth and visually appealing user interface.", 
-    image: "/images/figma.png" 
+    image: "/public/images/figma.png" 
   },
   { 
     name: "React", 
     description: "I use React to build fast and interactive front-end applications that enhance user experience.", 
-    image: "/images/react.png" 
+    image: "/public/images/react.png" 
   },
   { 
     name: "Next.js", 
     description: "Next.js helps me optimize performance and SEO, making my web apps load faster and rank better.", 
-    image: "/images/nextjs.png" 
+    image: "/public/images/nextjs.png" 
   },
   { 
     name: "TypeScript", 
     description: "With TypeScript, I write cleaner and more maintainable code by catching errors before they happen.", 
-    image: "/images/typescript.png" 
+    image: "/public/images/typescript.png" 
   },
   { 
     name: "Tailwind CSS", 
     description: "Tailwind makes styling efficient and fun. I can quickly build beautiful, modern interfaces.", 
-    image: "/images/tailwind.png" 
+    image: "/public/images/tailwind.png" 
   },
   { 
     name: "PHP", 
     description: "I use PHP for backend development, handling server-side logic and database interactions.", 
-    image: "/images/php.png" 
+    image: "/public/images/php.png" 
   },
   { 
     name: "Golang", 
     description: "Go is my choice for building high-performance and scalable backend services.", 
-    image: "/images/golang.png" 
+    image: "/public/images/golang.png" 
   },
   { 
     name: "C", 
     description: "I use C for system-level programming when performance and memory management matter the most.", 
-    image: "/images/c.png" 
+    image: "/public/images/c.png" 
   },
   { 
     name: "C#", 
     description: "C# is great for building Windows applications and game development with Unity.", 
-    image: "/images/csharp.png" 
+    image: "/public/images/csharp.png" 
   },
   { 
     name: "C++", 
     description: "I use C++ when I need fast and efficient code, especially for complex applications.", 
-    image: "/images/cplusplus.png" 
+    image: "/public/images/cplusplus.png" 
   },
   { 
     name: "Pascal", 
     description: "Pascal was one of my first programming languages. It helped me build a strong foundation in coding.", 
-    image: "/images/pascal.png" 
+    image: "/public/images/pascal.png" 
   },
   { 
     name: "Visual Basic .NET", 
     description: "I use VB.NET for building Windows applications that require a simple and intuitive interface.", 
-    image: "/images/visualbasic.png" 
+    image: "/public/images/visualbasic.png" 
   }
 ];
 
