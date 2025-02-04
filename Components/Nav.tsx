@@ -44,7 +44,7 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
     >
       <div className="flex items-center justify-between w-[80%] mx-auto h-full relative">
         <Image
-          src="/public/images/myportofolio.png"
+          src="/images/myportofolio.png"
           alt="My Portfolio"
           width={200} // Fixed width
           height={80} // Fixed height
