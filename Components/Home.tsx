@@ -17,11 +17,11 @@ const Home = () => {
   };
 
   return (
-    <div className="h-screen bg-[url('/images/banner.jpg')] bg-cover bg-center relative flex items-center">
+    <div className="h-screen bg-[#0C0B1D] relative flex items-center">
       <Particle />
       <div className="w-[90%] md:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center text-center lg:text-left gap-6 md:gap-[3rem]">
         
-        {/* Bagian Gambar (Order 1 di Mobile, Order 2 di Desktop) */}
+        {/* Bagian Gambar */}
         <div className="order-first lg:order-2 flex justify-center">
           <div
             data-aos="zoom-in"
@@ -36,7 +36,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Bagian Teks (Order 2 di Mobile, Order 1 di Desktop) */}
+        {/* Bagian Teks */}
         <div className="order-last lg:order-1">
           <h1
             data-aos="fade-up"
