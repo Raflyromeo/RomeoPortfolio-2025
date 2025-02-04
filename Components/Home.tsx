@@ -28,10 +28,9 @@ const Home = () => {
             className="w-[70%] max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] aspect-square relative overflow-hidden rounded-full shadow-lg shadow-gray-500"
           >
             <Image 
-              src="/images/RomeoN.jpg"
-              alt="user" 
-              layout="fill-size" 
-              className="object-cover rounded-full"
+              src="/images/RomeoN.jpg" 
+              fill sizes="(max-width: 768px) 100vw, 50vw" 
+              alt="Romeo" 
             />
           </div>
         </div>
