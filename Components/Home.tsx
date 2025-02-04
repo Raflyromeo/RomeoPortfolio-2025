@@ -30,7 +30,7 @@ const Home = () => {
             <Image 
               src="/images/RomeoN.jpg"
               alt="user" 
-              layout="fill" 
+              layout="fill-size" 
               className="object-cover rounded-full"
             />
           </div>

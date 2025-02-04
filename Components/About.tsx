@@ -19,8 +19,7 @@ const About = () => {
             <Image 
               src="/images/Romeo.jpg"
               alt="user" 
-              fill
-              sizes="(max-width: 768px) 200px, (max-width: 1024px) 300px, 400px"
+              fill sizes="(max-width: 768px) 200px, (max-width: 1024px) 300px, 400px"
               priority // For images that appear above the fold
               className="object-cover rounded-full"
             />
