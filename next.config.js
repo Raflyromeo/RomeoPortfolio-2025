@@ -1,10 +1,14 @@
-module.exports = {
-    webpackDevMiddleware: config => {
-      config.watchOptions = {
-        poll: 1000, // Set polling untuk menghindari error
-        aggregateTimeout: 300,
-      };
-      return config;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    experimental: {
+      appDir: false, // Jika error terkait appDir
     },
+    reactStrictMode: true,
+    webpack: (config) => {
+      config.infrastructureLogging = { level: 'error' };
+      return config;
+    }
   };
+  
+  module.exports = nextConfig;
   
