@@ -1,8 +1,4 @@
-/** @type {import('postcss-load-config').Config} */
-const config = {
-  plugins: {
-    tailwindcss: {},
-  },
+export default {
+  // Empty config to prevent inheriting from the parent Next.js directory's postcss.config.mjs
+  plugins: {}
 };
-
-export default config;
