@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Components
+import Navigation from '../../components/react/Navigation.tsx';
+import Hero from '../../components/vue/Hero.vue';
+import About from '../../components/vue/About.vue';
+import Experience from '../../components/vue/Experience.vue';
+import { RollingTextList } from '../../components/ui/rolling-list.tsx';
+import Footer from '../../components/vue/Footer.vue';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'id' } },
+  ];
+}
+
+const { lang } = Astro.params;
+---
+
+<Layout title={`Rafly Romeo Portfolio - ${lang.toUpperCase()}`} lang={lang}>
+  
+  {/* The React Kinetic Navigation Component (Astro Island) */}
+  <Navigation client:load lang={lang as "en" | "id"} />
+
+  <main class="w-full h-full relative z-10">
+    <Hero client:load />
+    
+    <About client:visible />
+    
+    <Experience client:visible />
+
+    <RollingTextList client:visible />
+  </main>
+  
+  <Footer client:visible />
+
+</Layout>
