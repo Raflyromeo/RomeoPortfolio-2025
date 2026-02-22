@@ -105,7 +105,7 @@ onMounted(() => {
               </a>
             </li>
             <li>
-              <a href="https://wa.me/6281388608132" target="_blank" class="group flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300">
+              <a href="https://wa.me/" target="_blank" class="group flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300">
                 <span class="text-sm md:text-base">+62 813-8860-8132</span>
               </a>
             </li>
