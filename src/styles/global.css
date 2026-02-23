@@ -64,7 +64,6 @@
     @apply font-sans;
   }
 
-  /* Glassmorphism Utilities */
   .glass {
     @apply bg-foreground/5 backdrop-blur-md border border-foreground/10;
   }
