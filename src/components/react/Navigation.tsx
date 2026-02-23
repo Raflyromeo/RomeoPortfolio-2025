@@ -42,7 +42,6 @@ export default function Navigation({ lang }: NavigationProps) {
   const linksRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
-    // Listen to custom event from Vue store or Language toggler
     const handleLangChange = () => {
       const docLang = document.documentElement.lang as 'en' | 'id';
       if (docLang && docLang !== currentLang) {
@@ -50,7 +49,6 @@ export default function Navigation({ lang }: NavigationProps) {
       }
     };
     
-    // We can also poll or set up an observer, but for now we'll just check periodically or via mutation observer
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'lang') {
@@ -66,26 +64,22 @@ export default function Navigation({ lang }: NavigationProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      // Animate background "gates" opening / expanding
       gsap.to(bgRef.current, {
         clipPath: 'circle(150% at 50% 50%)',
         duration: 1.2,
         ease: 'power4.inOut'
       });
       
-      // Animate links staggering in
       gsap.fromTo(linksRef.current, 
         { y: 100, opacity: 0, rotate: 5 },
         { y: 0, opacity: 1, rotate: 0, duration: 1, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.3 }
       );
     } else {
       document.body.style.overflow = '';
-      // Animate links out
       gsap.to(linksRef.current, {
         y: -50, opacity: 0, duration: 0.5, ease: 'power3.in', stagger: -0.05
       });
       
-      // Close gates
       gsap.to(bgRef.current, {
         clipPath: 'circle(0% at 50% 0%)',
         duration: 1,
@@ -94,7 +88,6 @@ export default function Navigation({ lang }: NavigationProps) {
       });
     }
 
-    // Cleanup when component unmounts
     return () => {
       document.body.style.overflow = '';
     };
@@ -103,9 +96,8 @@ export default function Navigation({ lang }: NavigationProps) {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const switchLanguage = () => {
-    // Trigger the global i18n switching
     const newLang = currentLang === 'en' ? 'id' : 'en';
-    document.documentElement.lang = newLang; // MutationObserver will catch this
+    window.location.href = `/${newLang}/${window.location.hash}`;
   };
 
   return (
@@ -145,7 +137,6 @@ export default function Navigation({ lang }: NavigationProps) {
         </div>
       </header>
 
-      {/* Fullscreen Overlay Grid / Gate */}
       <div 
         ref={bgRef}
         className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl flex flex-col justify-center px-12 lg:px-32"
