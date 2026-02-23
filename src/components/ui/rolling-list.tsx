@@ -28,17 +28,14 @@ function RollingTextItem({ item }: RollingTextItemProps) {
       rel="noopener noreferrer"
       className="group relative w-full cursor-pointer border-b border-border py-8 md:py-10 block"
     >
-      {/* Rolling text */}
       <div className="relative overflow-hidden h-[60px] md:h-24">
         <div className="transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-1/2">
-          {/* State 1: Normal */}
           <div className="h-[60px] md:h-24 flex items-center">
             <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-foreground uppercase tracking-tighter">
               {item.title}
             </h2>
           </div>
 
-          {/* State 2: Hover (Italic + Color) */}
           <div className="h-[60px] md:h-24 flex items-center justify-between">
             <h2
               className={cn(
@@ -52,12 +49,10 @@ function RollingTextItem({ item }: RollingTextItemProps) {
         </div>
       </div>
 
-      {/* Category Label */}
       <span className="absolute top-10 right-0 text-xs md:text-sm font-bold uppercase tracking-widest text-muted-foreground transition-opacity duration-300 group-hover:opacity-0 hidden md:block">
         {item.category}
       </span>
 
-      {/* Image Reveal Effect */}
       <div
         className={cn(
           "pointer-events-none absolute right-10 top-1/2 z-20 h-40 w-60 lg:h-56 lg:w-[340px] -translate-y-1/2 overflow-hidden rounded-[1.5rem] shadow-2xl",
@@ -83,10 +78,8 @@ export function RollingTextList() {
   const [lang, setLang] = useState<'en' | 'id'>('en');
 
   useEffect(() => {
-    // Initial lang
     setLang(document.documentElement.lang as 'en' | 'id');
     
-    // Listen for lang changes set by i18nStore
     const observer = new MutationObserver(() => {
       setLang(document.documentElement.lang as 'en' | 'id');
     });
