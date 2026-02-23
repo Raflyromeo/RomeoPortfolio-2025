@@ -20,12 +20,10 @@ const { title, lang, description = "Muhammad Rafly Romeo Nasution - Creative Dev
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- Font imports: Inter & Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Theme Script -->
     <script is:inline>
       const getThemePreference = () => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -45,14 +43,12 @@ const { title, lang, description = "Muhammad Rafly Romeo Nasution - Creative Dev
       }
     </script>
   </head>
-  <body class="antialiased overflow-clip selection:bg-primary/30 selection:text-white transition-colors duration-500">
+  <body class="antialiased overflow-x-hidden selection:bg-primary/30 selection:text-white transition-colors duration-500">
     
-    <!-- Background grid & dark radial gradient -->
     <div class="fixed inset-0 z-0 pointer-events-none">
       <div class="absolute inset-0 bg-[linear-gradient(to_right,var(--color-foreground)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-foreground)_1px,transparent_1px)] bg-[size:24px_24px] opacity-[0.05] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
     </div>
 
-    <!-- Client-side Lenis Setup -->
     <script>
       import Lenis from '@studio-freight/lenis';
       
@@ -72,10 +68,8 @@ const { title, lang, description = "Muhammad Rafly Romeo Nasution - Creative Dev
       requestAnimationFrame(raf);
     </script>
     
-    <!-- Initializing i18n Store on load -->
     <script>
       import { i18nStore } from '../store/i18n';
-      // Sync store with HTML lang
       const lang = document.documentElement.lang as 'en' | 'id';
       i18nStore.setLang(lang);
     </script>
