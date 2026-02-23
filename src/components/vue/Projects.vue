@@ -62,7 +62,6 @@ const getHeading = computed(() => {
 const getSubtitle = computed(() => i18nStore.t('headings.projectSubtitle'));
 
 onMounted(() => {
-  // Stagger entrance for projects
   ScrollTrigger.batch('.project-card', {
     interval: 0.1,
     batchMax: 3,
@@ -75,7 +74,6 @@ onMounted(() => {
     start: 'top 85%'
   });
 
-  // Header entrance
   gsap.fromTo('.project-header-anim',
     { y: 50, opacity: 0 },
     {
@@ -93,8 +91,6 @@ onMounted(() => {
 <template>
   <section ref="sectionRef" id="project" class="py-24 md:py-32 relative selection:bg-accent selection:text-white overflow-hidden">
     <div class="max-w-[1400px] mx-auto px-6 md:px-10 z-10 relative">
-      
-      <!-- Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8 project-header-anim">
         <div>
           <h2 class="font-display text-[40px] md:text-[60px] lg:text-[80px] font-extrabold uppercase tracking-tighter text-foreground leading-[1.1]">
@@ -107,29 +103,18 @@ onMounted(() => {
           </p>
         </div>
       </div>
-
-      <!-- Project Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
         <template v-for="(project, index) in projects" :key="project.id">
-          
           <div :class="['project-card group cursor-pointer relative', index === 0 ? 'md:col-span-2 lg:col-span-2' : 'col-span-1']" style="opacity: 0;">
-            
-            <!-- Glassmorphism Container with Anti-gravity hover -->
             <div :class="['relative w-full overflow-hidden rounded-[24px] glass-card border-white/5 shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all duration-700 ease-[0.2,0.65,0.3,0.9] hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(99,102,241,0.1)]', index === 0 ? 'aspect-[16/9] md:aspect-[21/9]' : 'aspect-square md:aspect-[4/3]']">
-              
-              <!-- Image with zoom -->
               <img
                 :src="project.image"
                 :alt="project.title"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-[0.2,0.65,0.3,0.9] group-hover:scale-110 grayscale group-hover:grayscale-0"
                 loading="lazy"
               />
-              
-              <!-- Overlays -->
               <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-700"></div>
               <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-700 pointer-events-none"></div>
-
-              <!-- Content Reveal -->
               <div class="absolute inset-0 p-8 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-[0.2,0.65,0.3,0.9]">
                 <p class="text-accent font-mono text-sm mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                   {{ project.category }}
@@ -138,7 +123,6 @@ onMounted(() => {
                   <h3 :class="['font-bold text-white drop-shadow-lg', index === 0 ? 'text-3xl md:text-5xl' : 'text-2xl md:text-3xl']">
                     {{ project.title }}
                   </h3>
-                  
                   <a 
                     :href="project.link" 
                     target="_blank" 
@@ -150,13 +134,10 @@ onMounted(() => {
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
-
         </template>
       </div>
-      
     </div>
   </section>
 </template>
