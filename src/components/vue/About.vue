@@ -23,7 +23,6 @@ const wordsP3 = computed(() => String(getP3.value).split(' '));
 import { Icon } from '@iconify/vue';
 import { Vue3Marquee } from 'vue3-marquee';
 
-// Exact Framework Logos mapping via Iconify
 const techStack = computed(() => [
   { id: "01", name: "React", category: "Library", icon: "logos:react", description: "UI Building" },
   { id: "02", name: "Next.js", category: "Framework", icon: "logos:nextjs-icon", description: "Fullstack" },
@@ -41,7 +40,6 @@ const techStack = computed(() => [
 
 onMounted(() => {
   setTimeout(() => {
-    // Anti-gravity entrance effect for titles
     gsap.fromTo('.about-title-anim',
       { y: 80, opacity: 0 },
       {
@@ -57,7 +55,6 @@ onMounted(() => {
       }
     );
 
-    // Text Fill-on-scroll effect
     gsap.to('.reveal-text', {
       opacity: 1,
       stagger: 0.1,
@@ -70,7 +67,6 @@ onMounted(() => {
       }
     });
     
-    // Tech badges Entrance stagger
     gsap.fromTo('.tech-badge', 
       { scale: 0.8, opacity: 0, y: 30 },
       {
@@ -95,9 +91,9 @@ onMounted(() => {
 
 <template>
   <section ref="sectionRef" id="about" class="min-h-screen relative flex items-center justify-center py-24 md:py-32 overflow-hidden">
-    <div class="max-w-[1400px] mx-auto px-6 md:px-10 z-10 relative">
+    <div class="w-full max-w-[1400px] mx-auto px-6 md:px-10 z-10 relative">
       
-      <div class="text-left md:text-center mb-16 md:mb-24 about-title-anim">
+      <div class="text-center mb-16 md:mb-24 about-title-anim">
         <h2 class="text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter text-foreground mb-4">
           {{ getTitle }}
         </h2>
@@ -108,33 +104,27 @@ onMounted(() => {
 
       <div class="flex flex-col md:items-center max-w-3xl lg:max-w-4xl mx-auto px-4 md:px-0">
         
-        <!-- Fill on Scroll Text -->
         <div ref="contentRef" class="space-y-6 sm:space-y-8 md:space-y-12 text-foreground font-bold tracking-tight text-[18px] sm:text-2xl md:text-3xl lg:text-4xl xl:text-[45px] 2xl:text-[55px] leading-[1.6] md:leading-[1.6] lg:leading-[1.5] text-center w-full break-words">
           <p>
             <template v-for="(word, i) in wordsP1" :key="'p1-'+i">
-              <span class="reveal-text opacity-20">{{ word }}</span>{{ ' ' }}
+              <span class="reveal-text inline-block opacity-20">{{ word }}</span>{{ ' ' }}
             </template>
           </p>
           <p>
             <template v-for="(word, i) in wordsP2" :key="'p2-'+i">
-              <span class="reveal-text opacity-20">{{ word }}</span>{{ ' ' }}
+              <span class="reveal-text inline-block opacity-20">{{ word }}</span>{{ ' ' }}
             </template>
           </p>
           <p>
             <template v-for="(word, i) in wordsP3" :key="'p3-'+i">
-              <span class="reveal-text opacity-20">{{ word }}</span>{{ ' ' }}
+              <span class="reveal-text inline-block opacity-20">{{ word }}</span>{{ ' ' }}
             </template>
           </p>
         </div>
       </div>
-
-      <!-- Pure Minimalist Tech Stack Marquee Section (No Card) -->
+      
       <div class="col-span-full mt-24 lg:mt-32 w-full about-title-anim max-w-[1400px] mx-auto opacity-0" style="opacity: 1;">
-        
-        <!-- Marquee track container matched to About Card width -->
         <div class="relative w-full overflow-hidden marquee-container py-4">
-
-          <!-- Fast Marquee Component Handling the Seamless Loop -->
           <Vue3Marquee :duration="40" :clone="true">
             <div class="flex flex-nowrap items-center py-4">
               <div v-for="tech in techStack" :key="tech.id" class="tech-badge mx-6 md:mx-10 flex flex-col items-center gap-3 group relative cursor-pointer grayscale group-hover:grayscale-0 hover:grayscale-0 transition-all duration-300">
